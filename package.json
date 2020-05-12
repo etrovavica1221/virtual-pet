@@ -1,0 +1,11 @@
+{
+  "name": "virtual-pet",
+  "version": "1.0.0",
+  "description": "Tamagotchi",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Viktoriia Petrova",
+  "license": "ISC"
+}
