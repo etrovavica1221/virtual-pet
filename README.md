@@ -1,5 +1,5 @@
 # Tamagotchi.
-# Help Snickers the Corgi to save his lost puppy.
+## Help Snickers the Corgi to save his lost puppy.
 
 <a href='https://webstockreview.net/image/corgi-clipart-drawn/2550735.html'><img width = 50% src='https://webstockreview.net/images/corgi-clipart-drawn-2.jpg'/></a>
 
