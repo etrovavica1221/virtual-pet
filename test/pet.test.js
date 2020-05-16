@@ -1,9 +1,12 @@
 const Pet = require('../src/pet');
 
 const MAXIMUM_FITNESS = 10;
+const FATAL_FITNESS = 0;
 const MINIMUM_HUNGER = 0;
+const FATAL_HUNGER = 10;
 const ALERT_FITNESS = 3;
 const ALERT_HUNGER = 5;
+const MAXIMUM_AGE = 30;
 
 describe('constructor', () => {
   it('returns an object', () => {
@@ -60,5 +63,22 @@ describe('checkUp', () => {
     const pet = new Pet('fido');
     expect(pet.checkUp()).toEqual('I feel great!');
   })  
+});
+
+describe('isAlive', () => {
+  it("returns true if pet is alive", () => {
+    const pet = new Pet('fido');
+    pet.age = MAXIMUM_AGE - 1;
+    pet.hunger = FATAL_HUNGER - 1;
+    pet.fitness = FATAL_FITNESS + 1;
+    expect(pet.isAlive).toEqual(true);
+  })
+  it("returns false if pet is dead", () => {
+    const pet = new Pet('fido');
+    pet.age = MAXIMUM_AGE;
+    pet.hunger = FATAL_HUNGER;
+    pet.fitness = FATAL_FITNESS;
+    expect(pet.isAlive).toEqual(false);
+  })
 })
 
