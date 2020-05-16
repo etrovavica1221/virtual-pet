@@ -10,7 +10,17 @@ Snickers is a very joyful and friendly dog, who loves to eat and not a secret th
 ## Description
 
 Snickers's puppy was stolen just right when it was born by poachers! 
-To Help Snickers you need to look after the baby corgi till Snickers will be able to rescue him.
+To help Snickers you need to look after the baby corgi til Snickers will be able to rescue him.
+
+First of all, you are honoured to give puppy a name as it was stolen even before it was named!
+Moreover, you have to make sure that following conditions were applied to keep baby corgi alive:
+
+- to feed the puppy so its hunger doesn't exceed 10;
+- to walk it to keep fitness no lower than 0;
+
+If you manage to do it for 30 days Snickers will be able to rescue him!
+
+Best of luck!
 
 ## Installation
 
