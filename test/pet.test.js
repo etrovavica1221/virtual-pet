@@ -10,7 +10,8 @@ const MAXIMUM_AGE = 30;
 
 describe('constructor', () => {
   it('returns an object', () => {
-    expect(new Pet('fido')).toBeInstanceOf(Pet);
+    expect(new Pet('Fido')).toBeInstanceOf(Pet);
+    expect(new Pet('Snickers')).toBeInstanceOf(Pet);
   });
 });
 
@@ -25,7 +26,7 @@ describe('growUp', () => {
 });
 
 describe('walk', () => {
-  it('increases fitness by to a maximum of 10', () => {
+  it('increases fitness by 3 to a maximum of 10', () => {
     const pet = new Pet('fido');
     pet.fitness = 8;
     pet.walk();
