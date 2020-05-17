@@ -5,32 +5,37 @@ const FATAL_HUNGER = 10;
 const ALERT_FITNESS = 3;
 const ALERT_HUNGER = 5;
 const MAXIMUM_AGE = 30;
+const MINIMUM_AGE = 0;
+const DEATH_ALERT = 'Your pet is no longer alive :(';
+const RESCUED_ALERT = `Well done! Snickers finally managed to find ${this.name}. They will remember you for the rest of their life!`;
 
 function Pet(name) {
   this.name = name;
-    this.age = 0;
-    this.hunger = 0;
+    this.age = MINIMUM_AGE;
+    this.hunger = MINIMUM_HUNGER;
     this.fitness = MAXIMUM_FITNESS;    
 };
           
 Pet.prototype = {
   get isAlive() {
-    return this.age < MAXIMUM_AGE && this.hunger < FATAL_HUNGER  && this.fitness > FATAL_FITNESS;
+    return this.hunger < FATAL_HUNGER  && this.fitness > FATAL_FITNESS;
    }
 };
 
 Pet.prototype.growUp = function() {
-  if (!this.isAlive) {
-    throw new Error('Your pet is no longer alive :(');
+  if (this.age === MAXIMUM_AGE) {
+    throw new Error(RESCUED_ALERT );
+  } else if (!this.isAlive) {
+    throw new Error(DEATH_ALERT);
   }
-    this.age += 1;
-    this.hunger += 5;
-    this.fitness -= 3;
+  this.age += 1;
+  this.hunger += 5;
+  this.fitness -= 3;
 };
 
 Pet.prototype.walk = function() {
   if (!this.isAlive) {
-    throw new Error('Your pet is no longer alive :(');
+    throw new Error(DEATH_ALERT);
   }
     if ((this.fitness + 4) <= MAXIMUM_FITNESS) {
       this.fitness += 4;
@@ -41,13 +46,14 @@ Pet.prototype.walk = function() {
 
 Pet.prototype.feed = function() {
   if (!this.isAlive) {
-    throw new Error('Your pet is no longer alive :(');
+    throw new Error(DEATH_ALERT);
   }
     if ((this.hunger - 3) >= MINIMUM_HUNGER) {
       this.hunger -= 3;
     } else {
       this.hunger = MINIMUM_HUNGER;
     }
+  
 };
 
 Pet.prototype.checkUp = function() {
@@ -61,6 +67,5 @@ Pet.prototype.checkUp = function() {
     return 'I feel great!';
   }
 };
-
 
 module.exports = Pet;
