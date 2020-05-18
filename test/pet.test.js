@@ -108,7 +108,24 @@ describe('isAlive', () => {
     pet.fitness = FATAL_FITNESS;
     expect(pet.isAlive).toEqual(false);
   })
-})
+});
+
+describe('adoptChild', () => {
+  it('adds child to parents children array property', () => {
+    const parent = new Pet('Snickers');
+    const child = new Pet('Topa');
+    parent.adoptChild(child);
+    expect(parent.children.length).toEqual(1);
+  })
+});
+
+describe('haveBaby', () => {
+  it('create child inside parents children array property', () => {
+    const parent = new Pet('Dave');
+    parent.haveBaby('Amelia');
+    expect(parent.children.length).toEqual(1);
+  })
+});
 
 
 
